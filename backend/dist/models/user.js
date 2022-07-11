@@ -11,7 +11,8 @@ let User = new Schema({
     firstname: String,
     lastname: String,
     phone: String,
-    id: String
+    id: String,
+    type: Number
 });
 exports.default = mongoose_1.default.model("User", User, 'users');
 //# sourceMappingURL=user.js.map

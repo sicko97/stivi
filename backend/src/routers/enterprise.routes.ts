@@ -58,4 +58,11 @@ entpRouter.route('/addToCategory').post(
 entpRouter.route('/getEntpCategories').get(
     (req, res) => new EnterpriseController().getEntpCategories(req, res)
 )
+entpRouter.route('/getPending').get(
+    (req,res) => new EnterpriseController().getPendingEnterprises(req,res)
+)
+entpRouter.route('/approve').post(
+    (req,res) => new EnterpriseController().approveEnterprise(req,res)
+)
+
 export default entpRouter;

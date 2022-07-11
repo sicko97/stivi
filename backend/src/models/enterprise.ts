@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 
 let Enterprise = new Schema({
     status:String,
-
     firstname: String,
     lastname: String,
     username: String,

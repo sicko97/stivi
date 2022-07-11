@@ -143,4 +143,19 @@ export class EnterpriseController {
             else res.json(cats);
         })
     }
+
+    getPendingEnterprises = (req:express.Request , res:express.Response) =>{
+        Enterprise.find({'status':'pending'}, (err,entps) =>{
+            if(err) console.log(err);
+            else{
+                res.json(entps);
+            }
+        })
+    }
+
+    approveEnterprise = (req:express.Request, res:express.Response) => { 
+        console.log(req.body.username);
+        Enterprise.updateOne({'username':req.body.username}, {$set:{'status' : "active"}});
+        res.json({'message': 'ok'});
+    }
 }

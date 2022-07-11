@@ -139,6 +139,20 @@ class EnterpriseController {
                     res.json(cats);
             });
         };
+        this.getPendingEnterprises = (req, res) => {
+            enterprise_1.default.find({ 'status': 'pending' }, (err, entps) => {
+                if (err)
+                    console.log(err);
+                else {
+                    res.json(entps);
+                }
+            });
+        };
+        this.approveEnterprise = (req, res) => {
+            console.log(req.body.username);
+            enterprise_1.default.updateOne({ 'username': req.body.username }, { $set: { 'status': "active" } });
+            res.json({ 'message': 'ok' });
+        };
     }
 }
 exports.EnterpriseController = EnterpriseController;

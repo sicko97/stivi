@@ -35,5 +35,7 @@ entpRouter.route('/addCollab').post((req, res) => new enterprise_controller_1.En
 entpRouter.route('/createCategory').post((req, res) => new enterprise_controller_1.EnterpriseController().createCategory(req, res));
 entpRouter.route('/addToCategory').post((req, res) => new enterprise_controller_1.EnterpriseController().addToCategory(req, res));
 entpRouter.route('/getEntpCategories').get((req, res) => new enterprise_controller_1.EnterpriseController().getEntpCategories(req, res));
+entpRouter.route('/getPending').get((req, res) => new enterprise_controller_1.EnterpriseController().getPendingEnterprises(req, res));
+entpRouter.route('/approve').post((req, res) => new enterprise_controller_1.EnterpriseController().approveEnterprise(req, res));
 exports.default = entpRouter;
 //# sourceMappingURL=enterprise.routes.js.map
